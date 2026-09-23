@@ -1,0 +1,84 @@
+*{
+    /* overflow-y: -webkit-paged-y; */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root,body,html{
+    min-width: 270px !important; /* Set the absolute smallerst screen*/
+    overflow: hidden;
+    height: 100%;
+} 
+/* General behaviour styles*/
+body {
+    margin: 0 !important;
+    -ms-overflow-style: scrollbar;
+    user-select: text;
+}
+/* ===== Global Scrollbars ===== */
+
+/* 1. Root & Global Styles */
+html, body, * {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-b) var(--bg-1);
+}
+
+/* Apply this class to any div or container: <div class="custom-scroll"> */
+
+
+.custom-scroll {
+    /* 1. Firefox Support */
+    scrollbar-width: thin;
+    scrollbar-color: var(--btn-1) var(--nav-3);
+    
+    /* Ensure the container actually allows scrolling */
+    overflow: auto; 
+}
+
+/* 2. WebKit (Chrome, Edge, Safari) Support */
+
+/* The Scrollbar Container */
+.custom-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: block;
+}
+
+/* The Background Track */
+.custom-scroll::-webkit-scrollbar-track {
+    background: var(--nav-3);
+    border-radius: 8px;
+}
+
+/* The Moveable Thumb */
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--btn-1);
+    border-radius: 8px;
+    border: 2px solid var(--btn-3); /* Creates padding effect around the thumb */
+}
+
+/* Hover Effect */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: var(--nav-4);
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}

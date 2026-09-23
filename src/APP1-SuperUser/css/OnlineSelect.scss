@@ -1,0 +1,72 @@
+#OnlineSelect{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+>label{
+    color: var(--btn-3);
+    font-size: 0.925rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 0px;
+    height: 26px;
+}
+>.list{
+    color: var(--btn-3);
+    padding: 0;
+    margin: 0;
+    padding-bottom: 100px;
+    height: 70vh;
+    >li{
+
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        justify-content: center;
+        background-color: var(--bg-2);
+        transition: padding 1s;
+        flex-direction: column;
+        position: relative;
+        &:hover{
+            padding: 12px 0;
+            transition: padding 1s;
+            color: var(--btn-2);
+        }
+        >div{
+            padding: 8px 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+
+
+            >span{
+                display: block;
+                padding: 7px;
+                position: absolute;
+                right: 8px;
+                top: calc(50% - 18px);
+                &:hover{
+                    color: var(--transfer-4);
+                    scale: 1.1;
+                    transition: scale 1s;
+
+        
+                }
+            >svg{
+                
+                        overflow: visible;
+                        transition: scale .5s;
+
+            }
+            }
+
+
+        }
+        &:nth-of-type(even) {background-color: var(--bg-3);}
+
+    }
+
+
+}
+
+}

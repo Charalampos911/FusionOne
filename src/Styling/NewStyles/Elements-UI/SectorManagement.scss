@@ -1,0 +1,141 @@
+@use '../Mixins.scss';
+#SectorManagement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    height: 93vh;
+    max-height: 93vh;
+    min-height: 93vh;
+    >.Choice-Tabs{
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        height: 46px;
+        align-items: center;
+        >div{
+            color: var(--btn-3);
+            text-align: center;
+            width: calc(50% - 16px);
+            background-color: var(--bg-3);
+            padding: 8px;
+            cursor: pointer;
+            &:nth-of-type(1){
+                border-radius: 10px 0px 0px 10px;
+            }
+            &:nth-of-type(2){
+                border-radius: 0px 10px 10px 0px;
+            }
+            &:hover, &.selected{
+                color: var(--btn-4);
+                background-color: var(--btn-3);
+            }
+        }
+
+    }
+
+
+    >.vertical-menu{
+    @include Mixins.vertical-menu;
+
+
+
+    }
+    >.Choice{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        color: var(--btn-3);
+    }
+    >.Orders-Choice{
+        color:green;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        overflow: visible;
+    }
+    >.Box{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 300px;
+        background-color: var(--bg-1);
+        border-radius: 10px;
+        border: 2px solid var(--border-a);
+        padding: 8px;
+        overflow-x: visible;
+        padding-right: 20px;
+        padding-left: 20px;
+        >div{
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            .CurrentOrder{
+                color: var(--text-2);
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                >div:nth-of-type(1){width: fit-content;}
+            }
+            >.Items{
+                background-color: var(--bg-2);
+                border-radius: 10px;
+                border: 2px solid var(--border-a);
+                padding: 8px;
+                width: calc(100% - 20px);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                position: relative;
+                overflow: visible;
+
+                >div{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: column;
+                    &:nth-of-type(1){
+                        color:var(--btn-3);
+                    }
+                    &:nth-of-type(2){
+                        color:var(--btn-2);
+                    }
+                }
+            
+                >.Actions{
+                    color:var(--btn-4);
+                    position: absolute;
+                    right: -20px;
+                    height: 40px;
+                    width: 40px;
+                    background-color: var(--btn-1);
+                    top: calc(50% - 20px);
+                    overflow: visible;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    &.Return{
+                        background-color: var(--success-1);
+                    }
+                    &:hover{
+                        color:var(--success-1);
+                        background-color: var(--btn-4);
+                    }
+                    >svg{
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+}

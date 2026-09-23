@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: "FogtwoNo5"; /* Choose a custom name for your font */
+  src: url("../Fonts/fogtwono5/FogtwoNo5.ttf") format("truetype"),
+
+  format("opentype");
+  /* Add more formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NeoJosephine"; /* Choose a custom name for your font */
+  src: url("../Fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf")
+  format("truetype"); /* Legacy Browsers */
+
+  /* Add more formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat"; /* Choose a custom name for your font */
+  src: url("../Fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+  format("truetype"); /* Legacy Browsers */
+
+  /* Add more formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FedraSansPro"; /* Choose a custom name for your font */
+  src: url("../Fonts/FedraSansPro-book/FedraSansPro-Normal.ttf")
+  format("truetype"),
+  /* Legacy Browsers */
+  url("../Fonts/FedraSansPro-book/FedraSansPro-Normal.eot")
+  format("opentype"); 
+  /* Add more formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+html * {
+  font-family: sans-serif;  /*Fall-back*/
+  font-family: "FogtwoNo5";
+  font-family: "NeoJosephine";
+  font-family: "Montserrat";
+  /* font-family: "FedraSansPro"; */
+}
+

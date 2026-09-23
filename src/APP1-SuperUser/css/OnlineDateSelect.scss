@@ -1,0 +1,79 @@
+#OnlineDateSelect{
+display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    overflow: visible;
+    .datepicker-wrapper{
+        background:none;
+    }
+    .NewSelect{
+    background-color:var(--bg-3) ;
+    color:var(--btn-3) ;
+    }
+    .datepicker-header{
+        >button{
+            color: var(--btn-3);
+            background: var(--btn-4);
+            &:hover{
+            color: var(--btn-4);
+            background: var(--btn-3); 
+            }
+        }
+.nav{
+        overflow: visible;
+    >button{
+    color:var(--nav-4);
+    &:hover{
+        color:var(--btn-3);
+        scale: 1.1;
+    }
+    }
+    >span{
+        color:var(--nav-4);
+    }
+}
+
+    }
+    >.head{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        height: 24px;
+        overflow: visible;
+        >.online-back{
+            top: 0px;
+        }
+        >label{
+           color: var(--btn-3);
+        }
+    }
+    .calendar {
+        background: none;
+        position: static;
+    }
+}
+
+.MultiTimesSU{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    >div{
+    width: fit-content;
+    background-color: var(--bg-3);
+    font-size: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    }
+}
+.availabilityBlock{
+
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

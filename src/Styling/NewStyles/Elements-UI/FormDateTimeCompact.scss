@@ -1,0 +1,80 @@
+#DateTimePicker.Compact{
+    min-width: 190px;
+    width: 190px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: visible;
+    background-color: var(--border-4);
+    border-radius: 10px;
+    >.Header{
+      width: inherit;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+          color: var(--btn-4);
+      >div{
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: clip;
+        &:hover{
+          font-weight: 900;
+        }
+        &.selected{
+          font-weight: 900;
+          text-decoration: underline;
+        }
+      }
+    }
+    >.DropdownContainer{
+    position: absolute;
+    height: 0px;
+    overflow: visible;
+    top: 45px;
+    background-color: var(--bg-3);
+    >.dropdown-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    max-height: 150px;
+    width: 190px;
+    overflow-x: hidden;
+    border-bottom: 4px solid var(--border-4);
+    border-radius: 10px;
+      >div{
+        min-height: 20px;
+        &.selected{
+          color: var(--btn-4);
+          background-color: var(--btn-1) !important;
+          font-weight: 600;
+        }
+        cursor: pointer;
+        padding: 4px;
+        width: 100%;
+        display: flex;
+        background-color: var(--bg-1);
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        &:nth-of-type(even){
+          background-color: var(--bg-2);
+        }
+        &:hover{
+          background-color: var(--btn-2);
+          color: var(--btn-4);
+          font-weight: 500;
+        }
+      }
+    }
+    }
+
+
+
+
+
+
+}

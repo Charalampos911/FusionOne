@@ -1,0 +1,44 @@
+@mixin no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin Vertical-Form($width: 300px, $offset: 80px) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    margin-top: 6px;
+    
+    width: $width;
+    max-height: calc(100vh - #{$offset});
+    
+    overflow: auto;
+    border: 2px solid var(--border-a);
+    border-radius: 10px;
+
+    > div.Form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-left: 6px;
+        border-left: 1px dotted var(--border-b);
+
+        #DynamicInput > .FPInput {
+            text-indent: 4px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

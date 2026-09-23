@@ -1,0 +1,148 @@
+
+
+@use './../../UniversalFadeInOut.scss' as anim;
+.Overview{
+    min-width: 300px;
+  
+    flex-wrap: nowrap;
+    flex-direction: column;
+    max-width: 90vw;
+    width: fit-content;
+    background-color: var(--bg-1);
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--border-a);
+    border-radius: 10px;
+    padding: 8px;
+    gap: 8px;
+    position: relative;
+    max-height: 90vh;
+    // height: 100vh;
+    padding-top: 8px;
+    height: 90vh;
+    max-width: 600px;
+   @include anim.fade-toggle(0.4s, ease-in-out);
+   display: flex;
+    >.BeforeMessage{
+        color: var(--btn-1);
+    }
+    &.Wide{
+        width: 100%;
+    }
+    >.Overview-head{
+        height: 40px;
+        position: sticky;
+        top: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: var(--bg-3);
+        border-radius: 10px;
+        z-index: 2;
+
+        >.ChangeSelection{
+            margin: 2px;
+        }
+        >label{
+            color: var(--text-1);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            width: 100%;
+            display: flex;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 8px;
+            >span{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    >.Tiles-box{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        position: relative;
+        max-width: 600px;
+        >.Tile{
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: var(--btn-2);
+            color: var(--nav-2);
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-width: 60px;
+            cursor: pointer;
+            min-height: 40px;
+
+            &.Selected{
+                background-color: var(--success-1);
+                color: var(--nav-3);
+                &:hover{
+                    background-color: var(--success-2);
+                }
+            }
+            >img{
+                height: 40px;
+                width: 40px;
+                overflow: hidden;
+            }
+            &:hover{
+                background-color: var(--btn-3);
+
+            }
+            &:not(.Active){
+                pointer-events: none;
+                background-color: #ffffff;
+                opacity: 50%;
+            }
+
+        }
+    }
+}
+.override-options{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+        align-items: center;
+    .direction-btn{
+        color: var(--nav-2);
+        background: var(--btn-3);
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(300px - 40px);
+
+        cursor: pointer;
+        &:hover{
+           text-decoration: underline;
+        }
+    }
+}
+.Overview-options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--bg-1);
+    border: 2px solid var(--border-a);
+    border-radius: 10px;
+    position: sticky;
+    bottom: 0px;
+
+}

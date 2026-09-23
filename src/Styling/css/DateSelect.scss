@@ -1,0 +1,38 @@
+/* Container rounding */
+.rounded-select-container{
+    >.dynamic-select {
+        border-radius: 12px; /* Adjust the px value for more/less roundness */
+        overflow: hidden; 
+        border: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        background: white;
+        transition: all 0.2s ease;
+        &:hover {
+            border-color: #bbb;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    }
+    >.select-box {
+    border-radius: 12px;
+    border: none !important; /* Remove internal borders if any */
+    flex: 1;
+        &.required {
+            border: 1px solid darkred !important;
+        }
+    }
+}
+
+
+/* Style the native date/time input */
+.dynamic-date-input {
+    border-radius: 12px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: transparent;
+}
+

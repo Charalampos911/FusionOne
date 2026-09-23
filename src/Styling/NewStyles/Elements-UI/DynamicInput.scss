@@ -1,0 +1,100 @@
+@use "../Mixins.scss";
+#DynamicInput{
+  cursor: pointer;
+  position: relative;
+  min-height: 44px;
+  display: flex;
+  flex-direction: row;
+  >div{
+    position: absolute;
+  }
+  >.clear{
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    >img{
+      width: 20px;
+      height: 20px;
+    }
+  }
+  >.Required{
+    border: 1px dashed var(--Required) ;
+  }
+    .Floating-Label {
+        z-index: 2;
+        font-size: 10px;
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        color: var(--input-2);
+    }
+
+  >.FPInput {
+  text-indent: 4px;
+  border-radius: 10px 0px 0px 10px;
+  background-color: var(--input-3);
+  color: var(--input-1);
+  font-size: 0.95rem;
+  border: 0px;
+  transition:
+  border-color 0.15s ease,
+  box-shadow 0.15s ease;
+  width: calc(100% - 18px);
+    text-overflow: ellipsis;
+
+
+
+
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px var(--ring) / 0.25;
+  }
+  &.isRequired{
+    border-color: darkred !important;
+  }
+}
+>.Field-Actions{
+  @include Mixins.field-Actions;
+}
+&.DynamicCheckContainer{
+  overflow: hidden;
+>.CheckSlot{
+    z-index: 1;
+    width: 165px;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 6px;
+    height: 100%;
+    align-items: center;
+    font-size: 0.95rem;
+    background-color: var(--btn-1);
+    color: var(--input-1);
+    >.CustomBox {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      >svg{
+        width: 24px;
+        height: 24px;
+      }
+    }
+    >.HiddenCheckbox{
+      display: none;
+    }
+}
+>.Field-Actions{
+  @include Mixins.field-Actions;
+}
+}
+}

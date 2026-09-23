@@ -1,0 +1,625 @@
+
+@use './../UniversalFadeInOut.scss' as anim;
+
+@mixin Action { //@include Action;
+    padding: 4px;
+    background-color: var(--btn-2);
+    color: var(--btn-4);
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    align-content: center;
+    font-size: 10px;
+}
+
+@mixin BtnBlue { //@include BtnBlue;
+        color: var(--btn-4);
+    padding: 8px 16px 8px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: var(--btn-3);
+    cursor: pointer;
+    &:hover{
+        font-weight: 500;
+    }
+}
+
+#OrdersMasterManager {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 82vh;
+    >.Navigation{
+        height: 115px;
+        background-color: var(--btn-3);
+        border-radius: 10px 10px 0 0;
+        color: var(--btn-4);
+        cursor: pointer;
+        >.OrderNav,.CardsNav{
+            display: flex;
+            justify-content: space-around;
+            gap: 6px;
+            padding: 4px;
+            >.Selected{
+                text-decoration: underline;
+                font-weight: 700;
+            }
+            >div{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                white-space: nowrap;
+                min-width: 60px;
+                flex-direction: column;
+                align-items: center;
+                &:hover{
+                    color: var(--nav-2);
+                    font-weight: 500;
+                }
+
+                
+            }
+        }
+    }
+
+
+
+}
+.AfterSuccess{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+    >label{
+        color: var(--success-1);
+    }
+}
+    #Cancellations{
+        // color:red !important;
+        height: 90%;
+        background-color: var(--bg-2);
+        >.ReturnsPanel{
+            >#OrderProducts{
+                    color: var(--btn-3);
+                    >.OrderProduct{
+
+                        background-color: var(--bg-3);
+                        border-bottom: 4px solid var(--btn-1);
+                        padding: 6px 8px;
+                        >.Actions{
+                            >div{
+                                color: #51f751;
+                                >button{
+                                    color: #51f751;
+                                }
+                                >div{
+                                    width: 32px;
+                                    height: 32px;
+                                    // background-color: aqua;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    >svg{
+                                        color: var(--btn-3);
+                                        width: 22px;
+                                        height: 22px;
+                                        cursor: pointer;
+                                        &:hover{
+                                            width: 26px;
+                                            height: 26px;
+                                        }
+                                    }
+                                }
+                                >input{
+
+                                    height: 22px;
+                                    border-radius: 4px;
+                                    border: none;
+                                    text-align: center;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            >#OrderServices{
+                >.OrderList{
+                    color: var(--btn-3);
+                    >.OrderService {
+                        border: 2px solid transparent;
+                        cursor: pointer;
+                        margin-Bottom: 10px;
+                        padding: 10px;
+                        display: flex;
+                        justify-Content: space-between;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        &.Selected{
+                            border-left: 4px solid var(--btn-2);
+                            background-Color: transparent;
+                        }
+                    }
+                }
+            }
+            >.OrderCheckout{
+                color: var(--btn-1);
+                >.BatchSummary{
+                    max-height: 60vh;
+                }
+                >.RefundActions{
+                    color: var(--error-2);
+                    display: flex;
+                    height: 80px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 8px;
+                    >button{
+                        padding: 10px 24px;
+                        border: none;
+                        border-Radius: 4px;
+                        cursor: pointer;
+                        font-Weight: 600;
+                        color: var(--error-3);
+                        background-color: var(--btn-4);
+                        &:hover{
+                            font-Weight: 800;
+                        }
+                    }
+                }
+
+            }
+
+
+            }
+
+        
+        >.CardsNav{
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--btn-1);
+            color: var(--btn-4);
+
+            >div{
+                padding: 6px 0px;
+                background-color: var(--btn-3);
+                width: 33%;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+                    font-weight: 600;
+                }
+            }
+        }
+        >.Path{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            min-width: 270px;
+            overflow: overlay;
+            padding: 6px 8px;
+            >div{
+                white-space: nowrap;
+                min-width: fit-content;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+            >.OrderNav{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                >div{
+                    display: flex;
+                    cursor: pointer;
+                    flex-direction: column;
+                    min-width: 260px;
+                    text-align: center;
+                    background-color: var(--btn-3);
+                    color: var(--btn-4);
+                    padding: 8px;
+                    border-radius: 6px;
+                    &:hover{
+                        font-weight: 600;
+                    }
+                }
+            }
+            >.DeptSelect{
+                color: green !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                >div{
+                    display: flex;
+                    cursor: pointer;
+                    flex-direction: row;
+                    min-width: 260px;
+                    text-align: center;
+                    background-color: var(--btn-3);
+                    color: var(--btn-4);
+                    padding: 8px;
+                    gap: 8px;
+                    border-radius: 6px;
+                    &:hover{
+                        font-weight: 600;
+                    }
+                    >div{
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            width: 50%;
+                        &:nth-of-type(1){
+                            align-items: flex-end;
+                        }
+                        &:nth-of-type(2){
+                            align-items: flex-start;
+                        }
+                    }
+                }
+            }
+         
+    }
+.AfterCheckout{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    overflow: visible;
+    >label{
+            color: var(--btn-3);
+    }
+
+}
+.OrderCheckout{
+    overflow: visible;
+    @include anim.fade-toggle(0.4s, ease-in-out);
+    
+    &.RentalCheckout{
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    .stats{
+        overflow: visible;
+        div{
+        display: flex;
+        width: 100%;
+        color: var(--text-2);
+        align-items: center;
+            &:nth-of-type(even){
+                background-color: var(--bg-2);
+            }
+            >span{
+                display: block;
+                width: 70%;
+                &:nth-of-type(1){
+                    text-align: end;
+                }
+                &:nth-of-type(2){
+                    text-indent: 10px;
+                    width: 30%;
+                }
+            }
+        }
+
+    }
+    >.CheckoutBox{
+        overflow: visible;
+        .Warnings{
+            color: var(--error-3);
+            display: flex;
+            flex-direction: column;
+        }
+        .Checkout-btn{
+            display: flex;
+            justify-content: center;
+            overflow: visible;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    }
+
+
+    >.CheckoutPortal{
+        margin-top: 10px;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.ListPanel{
+    height: 100%;
+    width: 100%;
+
+    >.Intergrated{
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+        gap: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        height:  calc(100% - 8px);
+        overflow: hidden;
+        padding-top: 8px;
+        background-color: var(--bg-2);
+        border-radius: 0 0 10px 10px;
+        &.UpdateServiceStatus{
+            >label{
+                color: var(--btn-3);
+                font-style: italic;
+            }
+        }
+        >span{
+            color: var(--btn-3);
+            font-style: italic;
+            font-size: 12px;
+        }
+        >.Actions{
+            display: flex;
+            gap: 6px;
+            overflow: visible;
+            >.ChangeSelection{
+                color: var(--error-2);
+                font-size: 24px;
+            }
+        }
+    } 
+    #OrderProducts{
+        width: 96%;
+        height: 94%;
+
+        padding: 6px;
+
+        margin-top: 6px;
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        >.AddProduct{
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--success-2);
+            z-index: 10;
+            transition: font-size .5s;
+            cursor: pointer;
+            &:hover{
+                transition: font-size .5s;
+                font-size: 36px;
+            }
+        }
+
+        >.AddNewItem{
+            padding-top: 12px;
+            position: absolute;
+            top: 30px;
+            display: flex;
+            gap: 8px;
+            height: 60%;
+            max-height: none;
+            overflow: hidden;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            z-index: 7;
+            width: fit-content;
+            min-width: 300px;
+            border-radius: 10px;
+            background-color: var(--grid-bg-3);
+            padding-left: 12px;
+            padding-right: 12px;
+            &.show{
+                transition: max-height 0.5s ease-in-out, padding 0.5s;
+                height:60%;
+            }
+            &.hide{
+                height:0%;
+                padding: 0px;
+                transition: max-height 0.5s ease-in-out, padding 0.5s;
+            }
+            >.dynamic-select{
+                width: revert-rule;
+            }
+            >.Action{
+                @include Action;
+                &.NoValue{
+                    display: none;
+                }
+            }
+        }
+
+        >.OrderList{
+           color: var(--btn-3);
+            height: 100%;
+            width:  100%;
+            position: relative;
+
+            >.OrderProduct{
+                padding: 4px;
+                border-bottom: 1px dotted var(--border-4);
+                >div{
+                    &:nth-of-type(1){
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    >div{
+                        display: flex;
+                        gap: 6px;
+                    }
+                }
+                .Remove{
+                    color: darkred;
+                }
+            }
+
+
+
+
+            &:nth-of-type(odd){
+                    background-color: var(--bg-3);
+            }
+                >.Actions{
+                    display: flex;
+                    gap: 4px;
+                    padding: 4px;
+                    >div{
+                        display: flex;
+                        align-items: center;
+                    }
+                    input{
+                        width: 20px;
+                        height: 14px;
+                        border-radius: 4px;
+                        border: none;
+                        text-align: center;
+                        outline: none;
+                        background-color: var(--btn-1);
+                        font-weight: 800;
+                        color: var(--btn-4);
+                    }
+                }
+            }
+
+        }
+        >.Actions{
+            border-radius: 10px; 
+            height: 100%;
+            width: 20%;
+            background-color: pink;
+            >div{
+                @include Action;
+        }
+    }
+    }
+    #OrderServices{
+        
+        position: relative;
+        height: 100%;
+        >.OrderList{
+        height: 100%;
+        overflow: scroll;
+            >.OrderService{
+                position: relative;
+                border-bottom: 1px dotted var(--input-3);
+                color: var(--text-2);
+                padding-bottom: 4px;
+                &:nth-of-type(odd){
+                    background: var(--bg-2);
+                }
+                &.Selected{
+                    border-left: 2px solid #51f751;
+                    padding-left: 2px;
+                    background-color: var(--bg-4);
+                }
+                &:hover{
+                    background-color: var(--bg-3);
+                }
+                >div{
+                    &:nth-of-type(1){
+                        display: flex;
+                        flex-direction: row;
+                        gap: 6px;
+                        font-size: 14px;
+                        font-style: italic;
+                        }
+                    
+                    &:nth-of-type(2){
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 12px;
+                        >span{
+                            &:nth-of-type(1){
+                                font-size: 10px;
+                            }
+                        }
+                        }
+                    &:nth-of-type(3){
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 12px;
+                        >div{
+                            display: flex;
+                            gap: 10px;
+
+                        }
+                        }
+                    &:nth-of-type(4){
+                        display: flex;
+                        flex-direction: row;
+                        gap: 6px;
+                        font-size: 14px;
+                        }
+                    &:nth-of-type(5){
+                        position: absolute;
+                        height: 24px;
+                        width: 24px;
+                        top: calc(50% - 12px);
+                        right: 0px;
+                        overflow: visible;
+                        &:hover{
+                            color: var(--error-1);
+                        }
+                        >svg{
+                            width: 24px;
+                            height: 24px;
+                        }
+                        }
+                        >span>.StatusIcons {
+                            &.completed{
+                                color:var(--status-1);;
+                            }
+                            &.confirmed{
+                                color:var(--status-2);;
+                            }
+
+                            &.inprocess{
+                                color:var(--status-3);;
+                            }
+                            &.pending{
+                                color:var(--status-4);;
+                            }
+                        }
+                    }
+           
+
+            }
+        
+        >.Actions{
+            display: flex;
+            gap: 12px;
+            position: sticky;
+            bottom: 0px;
+            margin-top: 8px;
+            >div{
+                @include BtnBlue;
+            }
+        }
+    }
+    }
+}
+

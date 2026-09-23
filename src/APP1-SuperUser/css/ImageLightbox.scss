@@ -1,0 +1,168 @@
+
+
+
+.org-image.zoomable {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.03);
+  }
+}
+
+  .lightbox-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: var(--bg-4);
+    border: 1px solid var(--shadow-2);
+    color: var(--btn-1);
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s ease;
+    z-index: 100001;
+    overflow: visible;
+    >span{
+          overflow: visible;
+          height: 40px;
+    }
+    &:hover {
+      background: var(--bg-2);
+    }
+  }
+
+
+
+
+/* --- Fullscreen Lightbox Overlay --- */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+    background-color: var(--shadow-4);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+
+
+
+  .lightbox-container {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+  }
+
+  /* Carousel Navigation Arrows */
+  .lightbox-arrow {
+    background: var(--shadow-1);
+    border: 1px solid var(--btn-4);
+    color: var(--btn-4);
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100000;
+    transition: background 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    min-width: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    min-height: 40px;
+    position: absolute;
+
+    &.next{
+       right: -20px;
+    }
+    &.prev{
+       left: -20px;
+    }
+   
+    &:hover {
+      background: var(--shadow-2);
+    }
+
+    @media (max-width: 600px) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+
+      &.prev { left: 10px; }
+      &.next { right: 10px; }
+    }
+  }
+
+  /* Slide Wrapper */
+  .lightbox-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 85vw;
+    max-height: 85vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      touch-action: pinch-zoom;
+    }
+
+    .lightbox-caption {
+      margin-top: 1rem;
+      text-align: center;
+          color: var(--input-3);
+
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+
+        .counter {
+          font-size: 0.9rem;
+          color: var(--btn-3);
+          margin-left: 8px;
+          font-weight: 400;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+            color: var(--btn-3);
+        margin: 0.3rem 0 0 0;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

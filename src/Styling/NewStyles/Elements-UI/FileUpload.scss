@@ -1,0 +1,58 @@
+.file-upload {
+  display: flex;
+  align-items: center;
+      position: relative !important;
+
+  // 1. Hide the original input completely
+  .hidden-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  // 2. Style the label to look like a button
+  .custom-file-button {
+    display: flex;
+    border: 1px solid var(--border-a);
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    user-select: none;
+    width: 164px;
+    z-index: 7;
+    height: 43px;
+    border-right-color: rgba(216, 219, 230, 0.2392156863);
+    justify-content: center;
+    align-items: center;
+    background-color: var(--input-3);
+    color: var(--input-1);
+    flex-direction: column;
+    transition: font-size .5s;
+      text-overflow: ellipsis;
+    overflow: hidden;
+    >.HasFile{
+      position: absolute;
+      top: 2px;
+      left: 10px;
+      font-size: 10px;
+    }
+    >span{
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
+    }
+    &:hover {
+      transition: font-size .5s;
+      font-size: 16px;
+    }
+
+    &:active {
+      transform: scale(0.98); // Small "press" effect
+    }
+  }
+}

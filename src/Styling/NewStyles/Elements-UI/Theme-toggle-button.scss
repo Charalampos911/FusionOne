@@ -1,0 +1,19 @@
+.theme-btn {
+    position: fixed;
+    bottom: 4px;
+    left: 4px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 0px solid var(--border-4);
+    padding: 0;
+    z-index: 999;
+    >img{
+        width: inherit;
+        height: inherit;
+    }
+}

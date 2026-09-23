@@ -1,0 +1,67 @@
+@use './utilities';
+#Auth {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    // height: 100vh;
+    .FPInput{
+      width: 100%;
+    }
+}
+.AuthForms{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.LoginCard {
+  padding: var(--card-padding);
+  background-color: var(--bg-2);
+  border-radius: 0.75rem;
+  border: 2px solid var(--border-a);
+ 
+  max-width: 420px;
+  >.Directions{
+  padding: 0px;
+}
+}
+
+#MainLogo{
+  width: 140px;
+  height: 140px;
+  border-radius: 10%;
+}
+.LoginHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  justify-content: center;
+}
+
+.LogoMark {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent-foreground)
+  );
+}
+
+#AuthCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--card-padding);
+    background-color: var(--bg-1);
+    border: 1px solid var(--border-a);
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 300px;
+}

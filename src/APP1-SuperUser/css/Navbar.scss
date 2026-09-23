@@ -1,0 +1,248 @@
+// SCSS Variables (Matching DivisionCarousel theme)
+$primary-color: var(--btn-3);
+$primary-light: var(--btn-hover-4);
+$text-dark: var(--nav-4);
+$text-muted: var(--btn-3);
+$text-light: #94a3b8;
+$border-color: var(--border-2);
+$card-bg: var(--grid-bg-4);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fusion-navbar {
+  width: 100%;
+  background: $card-bg;
+  border-bottom: 1px solid $border-color;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    // padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+  }
+
+  /* Brand Logo */
+  .navbar-brand {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: $text-dark;
+    letter-spacing: -0.02em;
+    user-select: none;
+    position: absolute;
+    left: 20px;
+
+    .brand-accent {
+      color: $primary-color;
+    }
+  }
+
+  /* Desktop Navigation Items */
+  .navbar-menu {
+    background: transparent;
+    border: none;
+    color: var(--btn-3);
+    font-size: 0.925rem;
+    font-weight: 500;
+    padding: 0.5rem 0.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: fit-content;
+
+    .mobile-drawer-header {
+      display: none; // Hidden on Desktop
+    }
+
+    .nav-link {
+      background: transparent;
+      border: none;
+      color: $text-muted;
+      font-size: 0.925rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &.fixed {
+        position: absolute;
+        right: 0;
+      }
+
+      &:hover {
+        color: $primary-color;
+        background: var(--bg-3);
+      }
+
+      &.active {
+        color: $primary-color;
+        background: $primary-light;
+        font-weight: 600;
+      }
+
+      &.scopedOut {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden; // Keeps content from spilling out while shrinking
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  /* Burger Icon Button (Hidden on Desktop) */
+  .hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010;
+
+    .bar {
+      width: 100%;
+      height: 2px;
+      background-color: $text-dark;
+      border-radius: 2px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &.open {
+      .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  .navbar-backdrop {
+    display: none;
+  }
+
+  /* ==========================================================================
+     Mobile View Styles (Media Query)
+     ========================================================================== */
+  @media (max-width: 950px) {
+    .navbar-container {
+      padding: 0.75rem 1rem;
+      justify-content: flex-start;
+      gap: 1rem;
+          width: 94%;
+
+    }
+
+    /* Reset absolute positioning for mobile so logo sits beside hamburger */
+    .navbar-brand {
+      position: static;
+      left: auto;
+      font-size: 1.2rem;
+    }
+
+    /* Top Left Burger Button */
+    .hamburger-btn {
+      display: flex;
+      margin-right: 0.5rem;
+    }
+
+    /* Dimmed Backdrop when Mobile Menu opens */
+    .navbar-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(2px);
+      z-index: 1001;
+    }
+
+    /* Slide-out Left Drawer */
+    .navbar-menu {
+        display: flex;
+        position: fixed;
+        top: 0px;
+        left: -292px;
+        width: 260px;
+        height: 92vh;
+        background: var(--grid-bg-4);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 2.25rem 1rem;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1002;
+        overflow-y: auto;
+
+      &.mobile-open {
+        transform: translateX(280px); // Slide into view
+      }
+
+      // .mobile-drawer-header {
+      //   display: block;
+      //   padding-bottom: 0.75rem;
+      //   margin-bottom: 0.5rem;
+      //   border-bottom: 1px solid $border-color;
+
+      //   .drawer-title {
+      //     font-size: 0.75rem;
+      //     font-weight: 700;
+      //     text-transform: uppercase;
+      //     letter-spacing: 0.05em;
+      //     color: $text-light;
+      //   }
+      // }
+
+      .nav-link {
+        text-align: left;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+
+        /* Reset desktop absolute positioning */
+        &.fixed {
+          position: static;
+          right: auto;
+          margin-top: auto; // Pushes "Contact" cleanly to the bottom of the drawer
+        }
+
+        /* Smooth vertical accordion transition for mobile drawer items */
+        &.scopedOut {
+          opacity: 0;
+          width: 100%;
+          max-height: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+          border: none;
+          overflow: hidden;
+          pointer-events: none;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+}

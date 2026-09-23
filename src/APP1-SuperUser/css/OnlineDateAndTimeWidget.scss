@@ -1,0 +1,430 @@
+// SCSS Variables
+$primary-color: #6366f1;
+$primary-hover: #4f46e5;
+$primary-light: #e0e7ff;
+$text-dark: var(--nav-4);
+$text-muted: var(--btn-3);
+$text-light: #94a3b8;
+$border-color: var(--border-2);
+$card-bg: var(--grid-bg-4);
+$card-bg-selected: #f8fafc;
+$card-radius: 16px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 var(--shadow-1);
+  }
+  70% {
+    box-shadow: 0 0 25px 10px var(--shadow-1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--shadow-1);
+  }
+}
+
+
+@mixin OnlineCard {
+
+    @include flex-column;
+    flex: 1 1 320px; /* Grow, shrink, base-width */
+    max-width: 380px;
+    min-width: 280px;
+    background: $card-bg;
+    border-radius: $card-radius;
+    border: 2px solid $border-color;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+animation: fadeIn 0.4s ease-in-out;
+    height: max-content;
+    min-height: 400px;
+  
+}
+.confirmation{
+position: relative;
+>.head{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 24px;
+    overflow: visible;
+    margin-top: 6px;
+    >label{
+          color: var(--btn-3);
+    }
+    .online-back {
+        top: 0px;
+    }
+}
+>.Cont{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    >div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0px;
+    position: relative;
+    >label{
+      color:var(--btn-1);
+      position: absolute;
+      font-style: italic;
+      font-size: 12px;
+      font-family: emoji !important;
+      top: 10px;
+    }
+    >span{
+      color:var(--btn-2);
+      display: block;
+      padding-top: 20px;
+    }
+    }
+}
+>.Actions{
+    display: flex;
+    justify-content: center;
+        margin-top: 20px;
+    >div{
+      padding: 10px 20px;
+    }
+}
+}
+
+
+.online-back{
+    position: absolute;
+    z-index: 10;
+    top: 8px;
+    left: 8px;
+    color: var(--btn-3);
+    >svg{
+      font-size: 26px;
+    }
+    &:hover{
+      color: var(--btn-2);
+    }
+}
+
+
+// Gallery Main Wrapper
+.fs-gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  height:  calc(100vh - 80px - 20px);
+
+  .fs-gallery-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  /* FLEXBOX LAYOUT replacing Grid */
+  .fs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
+    margin-bottom: 40px;
+    overflow: visible;
+    height: calc(92% - 80px - 20px);
+  }
+
+  /* fsanization Card */
+  .fs-card {
+    @include OnlineCard;
+
+    &:hover {
+      border-color: var(--border-4);
+
+
+      .fs-image {
+        transform: scale(1.05);
+      }
+    }
+
+    &.selected {
+      border-color: $primary-color;
+      background-color: $card-bg-selected;
+      // animation: pulseGlow 1.5s infinite;
+      box-shadow: 0 0 25px 10px var(--shadow-1);
+    }
+
+    /* Image Gallery Section */
+    .fs-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background-color: #0f172a;
+      overflow: hidden;
+      
+      &:hover {
+        .nav-btn {
+          opacity: 1;
+        }
+      }
+
+      .fs-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .fs-image-placeholder {
+        @include flex-center;
+        height: 100%;
+        color: $text-light;
+        font-size: 0.9rem;
+      }
+
+      /* Selection Badge */
+      .selected-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: var(--input-4);
+        color: var(--input-3);
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+      }
+
+      /* Carousel Controls */
+      .nav-btn {
+        @include flex-center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.4);
+        color: #ffffff;
+        border: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.2s ease;
+        z-index: 2;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.75);
+        }
+
+        &.prev {
+          left: 10px;
+        }
+
+        &.next {
+          right: 10px;
+        }
+      }
+
+      .image-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        z-index: 2;
+
+        .dot {
+          width: 6px;
+          height: 6px;
+          background: rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          transition: all 0.2s;
+
+          &.active {
+            background: #ffffff;
+            width: 16px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+
+    /* Card Details Body */
+    .fs-card-body {
+      @include flex-column;
+      padding: 1.25rem;
+      flex-grow: 1;
+      gap: 0.75rem;
+      background-color: var(--bg-3);
+      position: relative;
+      .UserSelection{
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+      }
+      .online-proccess-button{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: fit-content;
+        padding: 8px 20px;
+        background-color: var(--bg-1);
+        border-radius: 10px;
+        color: var(--btn-3);
+        &:hover{
+          scale: 1.02;
+          border-color: var(--border-4);
+          box-shadow: 0 20px 25px -5px var(--shadow-1), 0 0px 10px 6px var(--shadow-2)
+        }
+      }
+      .fs-header {
+        .fs-name {
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: $text-dark;
+          margin: 0 0 0.25rem 0;
+        }
+
+        .fs-description {
+          font-size: 0.875rem;
+          color: $text-muted;
+          margin: 0;
+        }
+      }
+
+      .image-caption {
+        font-size: 0.8rem;
+        color: var(--btn-3);;
+        background: var(--bg-3);
+        padding: 6px 10px;
+        border-radius: 6px;
+        margin: 0;
+      }
+
+      .fs-details {
+        font-size: 0.825rem;
+        color: var(--btn-3);;
+        border-top: 1px solid var(--bg-3);
+        padding-top: 0.75rem;
+
+        .detail-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 6px;
+          line-height: 1.4;
+        }
+      }
+
+      /* Contact Links Section */
+      .fs-contact {
+        margin-top: auto;
+        border-top: 1px dashed $border-color;
+        padding-top: 0.75rem;
+
+        .contact-heading {
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: $text-light;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          .contact-btn {
+          font-size: 0.75rem;
+          color: var(--btn-3);
+          background: var(--bg-3);
+          padding: 6px 10px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: background 0.2s;
+
+            &:hover {
+              background: var(--btn-hover-4);
+            }
+          }
+        }
+      }
+
+      /* Selection Trigger Button */
+      .select-action-btn {
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.6rem;
+        border: none;
+        border-radius: 8px;
+        background: var(--bg-3);
+        font-weight: 600;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &.active {
+          background: $primary-color;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+
+
+
+
+.online-service-selection{
+  @include OnlineCard;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  max-height: 92vh;
+  overflow: visible;
+}
+
+
+

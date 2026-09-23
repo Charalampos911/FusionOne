@@ -1,0 +1,150 @@
+
+.subCategory{
+      display: flex;
+      flex-direction: row;
+      min-height: 36px;
+      gap: 4px;
+      width: 100%;
+      overflow: hidden;
+      background-color: var(--nav-3);
+      border-radius: 10px;
+      >.subCategoryTitle{
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-1);
+      }
+      >.ScopeLoader{
+        width: 32px;
+        height: 32px;
+        display: flex;
+        border-radius: 10px;
+        border: 2px solid var(--success-1);
+        color: var(--success-1);
+        justify-content: center;
+        align-items: center;
+        &:hover{
+          background-color:var(--success-1);
+          color: var(--nav-3);
+        }
+      }
+    }
+.MainCard{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 1px dotted var(--border-b);
+    align-items: center;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    margin-top: 6px;
+    width: 300px;
+    max-height: calc(100vh - 80px);
+    overflow: auto;
+    border: 2px solid var(--border-a);
+    border-radius: 10px;
+
+}
+
+.ChangeSelection {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.5rem;
+  background-color: var(--nav-4);
+  color: var(--input-2) !important;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.05s ease;
+  >svg{
+    color: var(--input-2) !important;
+    fill: var(--bg-1);
+  }
+  &:hover {
+
+    background-color: var(--btn-2);
+    color: var(--nav-2);
+
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.DirectionPage{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    height: auto;
+    align-items: flex-start;
+    margin-top: 8px;
+    // width: 100%;
+    >.Directions{
+      // width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      overflow: hidden;
+      >div{
+            min-width: 180px;
+      }
+    }
+}
+
+.Directions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    gap: 8px;
+    max-height: 90vh;
+
+}
+.MainCard >.DirectionPage >.Directions{
+max-height: 80vh;
+}
+.DButton {
+    text-align: center;
+    min-width: 180px;
+    min-height: 40px;
+    padding: 4px;
+    height: auto;
+    background-color: var(--btn-4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-2);
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--nav-4);
+    user-select: none;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+    width: calc(100% - 10px);
+
+  /* Hover */
+  &:hover {
+    border: 1px solid var(--border-4);
+    background-color: var(--btn-2);
+    color: var(--nav-2);
+  }
+
+  /* Active / pressed */
+  &:active {
+    transform: translateY(1px);
+  }
+
+}

@@ -1,0 +1,47 @@
+// Base mixin to enable smooth fade-in/fade-out with display toggling
+@mixin fade-toggle($duration: 0.5s, $easing: ease) {
+  opacity: 1;
+  display: block;
+  transition: 
+    opacity $duration $easing, 
+    display $duration $easing allow-discrete;
+
+  &.is-hidden {
+    opacity: 0;
+    display: none;
+  }
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+// Explicit state control mixin
+@mixin fade-state($is-visible: true, $duration: 0.5s, $easing: ease) {
+  // 1. Declare transition FIRST
+  transition: 
+    opacity $duration $easing, 
+    display $duration $easing allow-discrete;
+
+  // 2. Set properties according to state
+  @if $is-visible {
+    opacity: 1;
+    display: block;
+
+    // 3. Keep nested rules like @starting-style at the very end
+    @starting-style {
+      opacity: 0;
+    }
+  } @else {
+    opacity: 0;
+    display: none;
+  }
+}
+// Usage:
+
+// @use './../../UniversalFadeInOut.scss' as anim;
+
+.modal {
+//    @include anim.fade-toggle(0.4s, ease-in-out);
+
+}

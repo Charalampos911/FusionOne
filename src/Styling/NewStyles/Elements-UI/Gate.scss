@@ -1,0 +1,46 @@
+// width
+// Small phones	    320–374 px
+// Standard phones	375–413 px
+// Large phones	    414–480 px
+#Departments{
+    overflow: visible;
+}
+
+#Gate-cont{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 24px;
+    overflow: visible;
+    >label{
+        color: var(--text-2);
+    }
+
+}
+.Gate{
+    overflow: visible;
+}
+#Gate-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    overflow: visible;
+    >span{
+        font-size: 10px;
+        letter-spacing: .5px;
+        color: var(--text-3);
+        cursor: pointer;
+    }
+}
+
+span{
+    &.MSuccess{
+        color: var(--success-3) !important;
+    }
+    &.MFailure{
+        color: var(--error-2) !important;
+    }
+}   

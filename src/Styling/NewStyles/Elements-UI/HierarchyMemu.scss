@@ -1,0 +1,205 @@
+/* For inheritance */
+$mobile: 768px;
+$tablet: 1024px;
+
+.Left-burger{
+    position: fixed;
+    min-width: 40px;
+    height: 40px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--bg-3);
+    >svg{
+    min-width: 36px;
+    height: 28px;
+    padding: 6px;
+    margin-left: 4px;
+    background-color: var(--btn-3);
+    }
+    >img{
+    min-width: 36px;
+    height: 39px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: var(--btn-3);
+    }
+  }
+
+#HierarchyMenu.Mobile {
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    gap: 8px;
+    background-color: var(--bg-3);
+    color: var(--btn-1);
+    height: fit-content;
+    overflow: visible;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 0;
+    transition: width 0.75s ease;
+    max-width: fit-content;
+    &:has(.show){
+      width: 100%;
+      max-width: fit-content;
+    }
+  >.Options{
+    width: 0px;
+    transition: width 0.75s ease;
+    max-width: fit-content;
+    &.show{
+      max-width: fit-content;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 4px;
+      transition: width 0.75s ease;
+      flex-direction: column;
+      align-items: flex-start;
+      >div{
+            width: calc(100% - 20px);
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+
+
+
+    > div {
+    position: relative;
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+    padding: 4px 10px;
+    overflow: hidden;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: min-content;
+      > img {
+        height: 28px;
+        width: 28px;
+        min-width: 24px;
+        background-color: var(--nav-4);
+        border-radius: 2px;
+        padding: 4px;
+      }
+
+      /* Left & Right animated borders */
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        width: 2px;
+        background-color: var(    --border-b);
+        transform: scaleY(0);
+        transition: transform 200ms ease-in-out;
+      }
+
+      &::before {
+        left: 0;
+        transform-origin: top;
+      }
+
+      &::after {
+        right: 0;
+        transform-origin: bottom;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        transform: scaleY(1);
+      }
+
+      &.selected {
+        color: var(--text-3);
+        border-bottom: 2px solid var(--border-b);
+        background-color: var(--bg-4);
+        color: var(--btn-2);
+      }
+    }
+  }
+  }
+
+
+
+  #HierarchyMenu.Desktop {
+  z-index: 1000;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100vw;
+  overflow-y: auto;
+  background-color: var(--bg-4);
+  color: var(--btn-1);
+  >div{
+    display: flex;
+    width: revert;
+    justify-content: space-between;
+    gap: 4px;
+    > div {
+      position: relative;
+      display: flex;
+      gap: 4px;
+      cursor: pointer;
+      padding: 4px 10px;
+      overflow: hidden;
+      justify-content: center;
+      flex-wrap: nowrap;
+      align-items: center;
+      min-width: min-content;
+      > img {
+        height: 28px;
+        width: 28px;
+        min-width: 24px;
+        background-color: var(--nav-4);
+        border-radius: 2px;
+        padding: 4px;
+      }
+
+      /* Left & Right animated borders */
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        width: 2px;
+        background-color: var(    --border-b);
+        transform: scaleY(0);
+        transition: transform 200ms ease-in-out;
+      }
+
+      &::before {
+        left: 0;
+        transform-origin: top;
+      }
+
+      &::after {
+        right: 0;
+        transform-origin: bottom;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        transform: scaleY(1);
+      }
+
+      &.selected {
+        color: var(--text-3);
+        border-bottom: 2px solid var(--border-b);
+        background-color: var(--bg-3);
+        color: var(--btn-2);
+      }
+    }
+  }
+  }

@@ -1,0 +1,224 @@
+
+// 4-themed scroll bars
+// @include Mixins.custom-scroll();
+@mixin custom-scroll($width: 8px, $thumb-color: var(--btn-1), $track-color: var(--nav-3), $hover-color: var(--nav-4)) {
+  // 1. Firefox
+  scrollbar-width: thin;
+  scrollbar-color: #{$thumb-color} #{$track-color};
+
+  // 2. WebKit (Chrome, Safari, Edge)
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width; // For horizontal scrolls
+    display: block;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    border-radius: 8px;
+    border: 2px solid var(--btn-3); // Padding effect
+    
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
+// Make an element non-selectable
+// @include Mixins.no-select;
+@mixin no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// Dynamic elements
+// @include Mixins.field-Actions;
+@mixin field-Actions {
+    min-height: calc(100% - 4px);
+    z-index: 0;
+    background-color: var(--bg-3);
+    border: 2px solid var(--btn-4);
+    color: var(--btn-3);
+    right: 0px;
+    width: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    >div{
+    overflow: hidden;
+    cursor: pointer;
+    
+    >svg{
+        transition: height .25s;
+        transition: width .25s;
+        height: 12px;
+        width: 12px;
+    }
+    &:hover{
+    >svg{
+        transition: height .25s;
+        transition: width .25s;
+        height: 16px;
+        width: 16px;
+    }
+    }
+  }
+}
+
+// TimeTilePicker
+// @include Mixins.time-tiles-cont;
+@mixin time-tiles-cont ($MaxHeight){
+  position: absolute;
+  color: var(--nav-1);
+  background: var(--bg-4);
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  
+  padding: 4px;
+  border-radius: 0 0 10px 10px;
+  background: var(--bg-3);
+  overflow: hidden;
+  >span{
+      display: block;
+      min-height: 20px;
+  }
+  >div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 4px;
+  align-content: center;
+  gap: 6px;
+  overflow: hidden;
+  >button{
+      border: 0px;
+      border-radius: 4px;
+      background: var(--btn-2);
+      color: var(--input-1);
+      height: 20px;
+      font-size: 10px;
+      width: 32px;
+      cursor: pointer;
+      &.selected{
+        background: var(--input-1);
+        color: var(--btn-2);
+        font-weight: 900;
+        border: 2px solid;
+      }
+      &:hover{
+          background: var(--input-1);
+          color: var(--btn-2);
+      }
+  }
+  }
+  &.show{
+    transition: height .75s ease;
+    height: $MaxHeight;
+  }
+  &.hide{
+      transition: height .75s ease;
+      height: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+  }
+}
+
+// Schedulers
+// @include Mixins.vertical-menu;
+@mixin vertical-menu (){
+            height: 50px;
+            width: inherit;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: flex-start;
+            overflow: visible;
+            gap: 8px;
+            padding: 4px;
+            position: relative;
+            top: 0px;
+            z-index: 20;
+            align-items: flex-start;
+            align-content: flex-start;
+            >.options{
+                overflow: visible;
+                position: relative;
+                top: 0px;
+                display: flex;
+                gap: 8px;
+                padding-right: 48px;
+                >.Scope-button{
+                    min-height: 40px;
+                    min-width: 40px;
+                    border-radius: 6px;
+                    background-color: var(--btn-3);
+                    color: var(--nav-3);
+                    position: relative;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    height: 40px;
+                    >svg{
+                        height: 24px;
+                        width: 24px;
+                    }
+                    &:hover{
+                        >svg{
+                            height: 28px;
+                            width: 28px;
+                        }
+                    }
+                }
+                >.Scope-select{
+                    height: fit-content;
+                    background: var(--bg-4);
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    gap: 4px;
+                    overflow: visible;
+                    min-width: 240px;
+                    border-radius: 20px;
+                    padding: 4px;
+                }
+        
+            }
+            
+            >#dynamic-select{
+                width: fit-content;
+                min-width: 160px;
+                .dynamic-select{
+                    width: 100%;
+                    min-width: 160px;
+                    >.select-box{
+                        max-width: 160px;
+                        width: 160px;
+                        >input{
+
+                        }
+                        > .arrow {
+                            right: 10px;
+                        }
+                    }
+                }
+                >#options-list{
+                        
+                }
+            }
+          }

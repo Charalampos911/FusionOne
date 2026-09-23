@@ -1,0 +1,301 @@
+@use '../Mixins.scss';
+#Daily-Scheduler-container{
+        height: 90vh;
+        background-color: var(--bg-3);
+        @include Mixins.custom-scroll();
+    >.Daily-Scheduler{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            max-width: 90vw;
+            width: fit-content;
+            background-color: var(--bg-1);
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid var(--border-a);
+            border-radius: 10px;
+            margin-top: 4px;
+            justify-content: center;
+            align-items: center;
+            align-content: flex-start;
+            gap: 8px;
+            position: relative;
+            padding-top: 0px;
+            overflow: hidden;
+            height: calc(100% - 16px);
+            min-width: 700px;
+        >.Daily-Scheduler-head{
+            width: 100%;
+            height: 40px;
+            position: sticky;
+            top: 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: var(--nav-3);
+            z-index: 2;
+            >.ChangeSelection{
+                margin: 2px;
+            }
+            >label{
+                color: var(--text-1);;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                width: 100%;
+                display: flex;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    
+    >.Daily-Scheduler-body{
+        color: blue;
+        overflow: hidden;
+
+       #Quick-Menu{
+            overflow: visible;
+            position: fixed;
+            bottom: 20px;
+            width: 300px;
+            height: 42px;
+            // background-color: aquamarine;
+            border-radius: 10px;
+            left: calc(50% - 150px);
+            right: auto;
+            >.Quick-Actions{
+                overflow: visible;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                >div{
+                overflow: visible;
+                    background-color: var(--btn-4);
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                border: 1px dotted var(--border-a);
+                border-radius: 50%;
+
+                >svg{
+                    width: 24px;
+                    height: 24px;
+                    color: var(--btn-3);
+                    position: absolute;
+
+                }
+                >div{
+                    position: relative;
+                    overflow: visible;
+                    display: none;
+                    pointer-events: none;
+                    >div{
+                        // background-color: #def5ff;
+                        border-radius: 20px;
+                        padding: 4px;
+                        position: relative;
+                        top: -40px;
+                        color: #4a9bff;
+                        font-size: 10px;
+                        width: 200px;
+                        text-align: center;
+                        white-space: nowrap;
+                        
+                        height: 20px;
+                        pointer-events: none;
+                        >div{
+                            height: 16px;
+                            background-color: #def5ff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: fit-content;
+                            margin-left: auto;
+                            margin-right: auto;
+                            padding: 2px 8px 2px 8px;
+                            border-radius: 20px;
+                            pointer-events: none;
+                        }
+                    }
+
+                    
+                }
+                &:hover{
+                        div{display: block;}
+                }
+                &svg:hover ~ div {
+                    display: block;
+                }
+                }
+            }
+        }
+
+
+        
+        >.vertical-menu{
+            @include Mixins.vertical-menu;
+        }
+        >.Scheduler-Divisions-box{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: calc(100% - 20px);
+            gap: 4px;
+            height: 75vh;
+            max-height: 76vh;
+            overflow: overlay;
+            padding-right: 20px;
+            background: var(--bg-1);
+            >.Scheduler-Division{
+                display: flex;
+                flex-direction: column;
+                max-width: 100px;
+                align-items: flex-start;
+                min-width: 100px;
+                font-size: 14px;
+                overflow: visible;
+                >.Name{
+                    display: flex;
+                    width: 100px;
+                    height: 40px;
+                    background-color: var(--bg-3);
+                    border-radius: 4px;
+                    min-width: 100px;
+                    color: var(--btn-3);
+                    position: sticky;
+                    top: 0px;
+                    z-index: 10;
+                    justify-content: center;
+                    >div{
+                        display: flex;
+                        flex-direction: column;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        padding: 4px;
+                        overflow: hidden;
+                    }
+                }
+                >.Seperator{
+                    height: 2px;
+                    width: 100px;
+                    margin-top: 3px;
+                    margin-bottom: 3px;
+                    border-top: 1px dotted var(--border-b);
+                }
+                >.Column{
+                    height: 1470px;
+                    min-height: 1470px;
+                    position: relative;
+                    width: calc(100px - 8px - 2px);
+                    border-left: 1px dotted var(--border-b);
+                    border-right: 1px dotted var(--border-b);
+                    margin-top: 4px;
+                    margin-bottom: 4px;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    >.time-Spam{
+                        position: absolute;
+                        width: calc(100% - 8px);
+                        >div{
+                            height: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 10px;
+                            letter-spacing: 1px;
+                            color: var(--btn-3);
+                            cursor: pointer;
+                            &:hover{
+                             color: var(--btn-2); 
+                             font-weight: 600;
+                            }
+                            &.Selected-Time{
+                                color: var(--input-1);
+                                font-size: small;
+                                background-color: var(--success-3);
+                                border-radius: 10px;
+                                &.IsTransfer::after {
+ 
+                                    color: var(--input-1);
+                                    content: " ✓"; 
+                                }
+                            
+                            }
+                            &.IsTransfer {
+                                font-weight: 600;
+                                position: relative; // Keeps spacing neat
+
+                                &::after {
+                                    content: " 🢔"; 
+                                    color: var(--input-3); 
+                                    font-size: 0.85em;
+                                    margin-left: 4px;
+                                }
+                            }
+                        }
+   
+                    }
+                    >.Scheduler-Division-appointment{
+                    position: absolute;
+                    color: var(--btn-4);
+                    padding: 4px;
+                    font-weight: 600;
+                    border-radius: 6px;
+                    background-color: var(--btn-2);
+                    border: 2px solid var(--btn-4);
+                    width: calc(100% - 20px);
+                    &.Selected{
+                    background-color: var(--btn-3);
+                    border: 2px solid var(--btn-2);
+                    }
+                    &.Transferable{
+                        background-color: var(--transfer-2);
+                        border: 2px solid var(--transfer-4); 
+                        width: 10px;
+                        >div{
+                            display: none;
+                        }
+                    }
+
+
+                    
+                    >div{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 10px;
+                        text-align: center;
+                        gap: 4px;
+                        >.Status{
+                            >div{
+                            // &.completed{
+                            //     color:var(--status-1);
+                            // }
+                            // &.confirmed{
+                            //     color:var(--status-2);
+                            // }
+
+                            // &.inprocess{
+                            //     color:var(--status-3);
+                            // }
+                            // &.pending{
+                            //     color:var(--status-4);
+                            // }
+                        }
+                        }
+                    }
+                    }
+                }
+            }
+
+        }
+    }
+    }
+
+
+}

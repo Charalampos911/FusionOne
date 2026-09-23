@@ -1,0 +1,367 @@
+@use './utilities';
+
+/* Back Arrow */
+
+
+
+/* Inputs */
+
+
+/* Register Button */
+// button {
+//   margin-top: var(--spacing-md);
+//   border-radius: 0.5rem;
+//   background-color: var(--btn-bg-2);
+//   color: var(--btn-text-2);
+//   border: 1px solid var(--border-a);
+//   cursor: pointer;
+//   min-height: 40px;
+//   font-weight: 500;
+//   font-size: 0.95rem;
+
+//   transition:
+//     background-color 0.15s ease,
+//     box-shadow 0.15s ease,
+//     transform 0.05s ease;
+
+//   &:hover {
+//     background-color: var(--btn-bg-1);
+//     color: var(--btn-text-1);
+//     border: 1px solid var(--border-b);
+//     box-shadow: 0 4px 8px var(--btn-shadow-1);
+//   }
+
+//   &:active {
+//     transform: translateY(1px);
+//   }
+
+//   &:disabled {
+//     opacity: 0.6;
+//     cursor: not-allowed;
+//   }
+// }
+.seed{
+          color: var(--btn-3);
+}
+.qr-container{
+    color: var(--btn-3);
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    >div{
+      overflow: visible;
+    }
+    >h3{
+      text-align: center;
+      padding: 4px;
+      margin: 4px;
+
+    }
+}
+.SuccessCont,.FailCont{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-4);
+    height: 100%;
+    >.fail{
+      color:var(--error-2);
+    }
+    >h2{
+      color: var(--success-1);
+    }
+    >div{
+      color: var(--btn-3);
+background-color: var(--bg-3);
+      border-radius: 10px;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &.Options{
+        overflow: visible;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+        background: none;
+        >a{
+          overflow: visible;
+        }
+      }
+      >div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        >span{
+          overflow: visible;
+          &:nth-of-type(1){
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 6px;
+          }
+        }
+      }
+    }
+    >p{
+          color: var(--btn-1);
+    }
+
+
+}
+
+.Overview-head{
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-3);
+  >label{
+    color: var(--btn-3);
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 22px;
+
+  }
+}
+.Rental-list{
+    padding: 10px;
+    border: 1px solid var(--border-3);
+    width:  92%;
+    max-width: 280px;
+    border-radius: 10px;
+    max-height: 300px;
+    color: var(--btn-3);
+    >.Rental{
+      position: relative;
+      color: var(--text-3);
+      border-bottom: 1px dotted var(--border-4);
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      >.Checkout{
+            color: var(--btn-3);
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 0px;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg-4);
+        border-radius: 4px;
+
+        &:hover{
+          color: Red;
+        }
+      }
+      &:hover{
+        color: var(--text-1);
+         border-bottom: 2px solid var(--border-4);
+      }
+      &.selected{
+        color: var(--text-2);
+         border-bottom: 2px solid var(--border-4);
+
+      }
+    }
+}
+.targeted-apps{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 52vh;
+    overflow: overlay;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    >button{
+      width: 220px;
+      font-size: 16px;
+    }
+}
+#QueryRentalsSelect{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
+    gap: 10px;
+    overflow: visible;
+    margin-top: 8px;
+}
+.Rental-actions-cont{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
+    gap: 10px;
+    overflow: visible;
+    >.scope-control-container{
+      width: 100%;
+      max-width: none;
+    }
+}
+#Query{
+    display: flex;
+    background-color: var(--btn-bg-2);
+    border-radius: 10px;
+    border: 1px solid var(--border-a);
+    justify-content: space-between;
+    max-height: 36px;
+  >div{
+    display: flex;
+    >img{
+      width:24px;
+    }
+  }
+}
+.QueryFields{
+  display: flex;
+}
+
+
+.Floating-Label{
+      z-index: 2;
+      font-size: 10px;
+      position: absolute;
+      top: 2px;
+      left: 6px;
+
+    }
+
+
+
+
+.NotSelected {
+    opacity: 0.4;                /* Makes it look faded/blended */
+    filter: grayscale(100%);     /* Removes color to look inactive */
+    pointer-events: none;        /* Prevents the onClick from firing */
+    cursor: not-allowed;         /* Shows a 'no' sign if hovered */
+    transition: all 0.3s ease;   /* Smoothly fades in/out when selection changes */
+    >img {
+        transform: scale(0.9);
+    }
+}
+#Editor{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: var(--card-padding);
+    border: 1px solid var(--border-a);
+    border-radius: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6px;
+    max-width: 90vw;
+}
+
+
+
+
+.CustomCard{
+    overflow: visible !important;
+    .Field-Actions{
+      display: none;
+    }
+    .select-box {
+    width: 100% !important;
+    max-width: calc(100% - 0px) !important;
+    }
+    #options-list {
+          width: 100% !important;
+    max-width: calc(100% - 0px) !important;
+    }
+
+    .Form{
+        overflow: visible;
+    }
+    .options-list{
+      background-color: var(--bg-1);
+    }
+    .FPInput {
+      width:100% !important;
+    }
+  }
+
+
+
+
+
+
+
+.mini-dropdown-container{
+  position: relative;
+  overflow: visible;
+  >.dropdown-content{
+    color: var(--bg-1);
+    position: absolute;
+    top: 20px;
+    background-color: var(--text-3);
+    padding: 4px;
+    height: 22px;
+    z-index: 100;
+    border-radius: 2px 2px 10px 10px;
+    overflow: hidden;
+    padding-bottom: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.SpecialDateButton,.SpecialTimeButton{
+    width: 190px;
+    background-color: var(--btn-bg-2);
+    padding: 4px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid var(--border-a);
+}
+
+
+
+
+.MessageCont{
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+
+
+
+
+}
+.DirectBook{
+    color: var(--btn-4);
+    padding: 6px 16px 6px 16px;
+    background-color: var(--btn-3);
+    border-radius: 10px;
+    cursor: pointer;
+  &:hover{
+    background-color: var(--btn-2);
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+.Order-List{
+    color: var(--text-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    >label{
+        display: block;
+        padding: 10px 0;
+    }
+    >.Item{
+        max-width: 300px;
+        min-width: 300px;
+        background-color: var(--bg-4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        gap: 8px;
+        padding: 10px 0;
+         border: 2px solid  var(--bg-4);
+         cursor:pointer;
+        &:hover{
+            border: 2px solid var(--border-4);
+        }
+        >.Sums{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            >div{
+                display: flex;
+                gap: 10px;
+            }
+
+        }
+    }
+}
+
+.Order-Details{
+    color: var(--btn-3);
+    width: 300px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+
+    
+    >.Prod-list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
+        max-height: 400px;
+        overflow: overlay;
+        >.Order-product{
+        color: var(--text-2);
+        background: var(--bg-3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        gap: 6px;
+        border-radius: 10px;
+        position: relative;
+        min-height: 80px;
+        cursor: pointer;
+        justify-content: space-around;
+            >.quantity-stepper{
+                color: var(--border-4);
+                display: flex;
+                gap: 10px;
+                background-color: var(--bg-1);
+                >button{
+                    background-color: transparent;
+                    border: transparent;
+                    color: var(--btn-3);
+                    cursor:pointer;
+                    &:hover{
+                        background-color: var(--bg-4);
+                    }
+                }
+            }
+              cursor: pointer;
+              >svg{
+                position: absolute;
+                right: 8px;
+                font-size: 16px;
+                top: calc(50% - 8px);
+                &:hover{
+                    color:red;
+                }
+              }
+        }
+    }
+    >div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0;
+   overflow: visible;
+    >h4{
+        text-align: center;
+        cursor: pointer;
+        margin: 0;
+    }
+    >.Actions-cont{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        align-items: flex-end;
+        position: absolute;
+        z-index: 994;
+        overflow: visible;
+        right: 0;
+        >svg{
+            font-size: 30px;
+        }
+        >.Actions{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            position: absolute;
+            right: 0px;
+            top: 90px;
+            z-index: 1111111;
+            background-color: var(--shadow-1);
+            padding: 10px;
+            border-radius: 10px;
+            width: 280px;
+        }
+    }
+    }
+
+    >.switch{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bg-4);
+    
+    border-radius: 8px;
+    >div{
+        width: 50%;
+        text-align: center;
+        padding: 10px 0;
+        cursor: pointer;
+        &:hover{
+            background-color: var(--btn-hover-4);
+            color: var(--btn-2);
+
+        }
+        &.selected{
+            background-color: var(--btn-hover-2);
+            color: var(--btn-4);
+        }
+    }
+    }
+}

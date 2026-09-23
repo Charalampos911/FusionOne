@@ -1,0 +1,81 @@
+#FormsSelect{
+    width: var(--maxWidth);
+    background-color: var(--btn-1);
+    color: var(--input-1);
+    border-radius: 20px;
+    height: 48px;
+    cursor: pointer;
+    overflow: visible;
+    position: relative;
+    min-height: 48px;
+    >.cont{
+        
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:has(.floating-label){
+            padding-top: 4px;
+        }
+        >.floating-label{
+            text-indent: 16px;
+            font-style: italic;
+            font-size: 12px;
+            position: absolute;
+            top: 4px;
+        }
+        >.box{
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 16px;
+            position: relative;
+            >.selected {
+                width: 90%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+            }
+            &:hover{
+                >.selected {
+                    font-weight: 500;
+                }
+                
+            }
+
+            >.arrow{
+                position: absolute;
+                top: 0px;
+                right: 16px;
+            }
+        }
+    }
+    >.list{
+        position: absolute;
+        top: 44px;
+        border-radius: 10px;
+        left: 0px;
+        z-index: 999;
+        background-color: var(--bg-4);
+        width: 100%;
+        >ul{
+            padding: 0px;
+            margin: 0px;
+            padding-bottom: 16px;
+            >li{
+                padding: 4px;
+                text-indent: 8px;
+                color: var(--btn-2);
+                &:nth-of-type(even){
+                    background-color: var(--bg-2);
+                }
+                &:nth-of-type(odd){
+                    
+                    background-color: var(--bg-3);
+                }
+                &:hover{
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

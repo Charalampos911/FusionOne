@@ -1,0 +1,78 @@
+:root{
+  /* Page backgrounds (light) */
+  --bg-1: #F8F9FC;   /* app background */
+  --bg-2: #FFFFFF;  /* cards / panels */
+  --New-blue-light: #5bcfff;
+  --New-blue-border:  #9fd9f1;
+  --New-blue-background:   #edfaff;
+
+  --New-green-light: #5ef840;
+  --New-green-border:  #94f381;
+  --New-green-background:   #f0ffed;
+
+  --New-purple-light: #a30d82;
+  --New-purple-border:  #cb37ab;
+  --New-purple-background:   #ff78e2;
+
+  /* Button text */
+  --btn-text-1: #FFFFFF;  /* on primary button */
+  --btn-text-2: #2A2F45;  /* on secondary button */
+
+  /* Button backgrounds (indigo) */
+  --btn-bg-1: #3B4AF7;    /* primary indigo */
+  --btn-bg-2: #EEF0FF;   /* soft indigo */
+
+  /* Button backgrounds (indigo) */
+  --btn-shadow-1: #4f59cc;    /* primary indigo */
+  --btn-shadow-2: #303c97;   /* soft indigo */
+
+
+  /* Button hover backgrounds */
+  --btn-hover-1: #2F3EE6; /* darker indigo */
+  --btn-hover-2: #E1E5FF; /* slightly stronger soft indigo */
+
+  /* Borders */
+  --border-a: #D8DBE6;    /* default border */
+  --border-b: #B8C0E0;    /* focused / active */
+  
+  /* Text */
+  --text-1: #565969; /* subtle */
+  --text-2: #2d345b; /* emphasized */
+  --text-3: #4666a8; /* emphasized */
+
+  /* Grid lines */
+  --grid-line-1: #E4E6F0; /* subtle */
+  --grid-line-2: #CDD2E8; /* emphasized */
+
+  /* Grid backgrounds */
+  --grid-bg-1: #f9f9f9;  /* base */
+  --grid-bg-2: #F3F5FD;  /* indigo-tinted */
+
+  --list-selected-1: #99f39d82 ;  /* indigo-tinted */
+  --list-selected-2: rgb(41, 129, 45)82 ;  /* indigo-tinted */
+
+
+--Required: #ff3c43;
+
+ --spacing-xs: 4px;   /* 4px */
+  --spacing-sm: 8px;    /* 8px */
+  --spacing-md: 12px;   /* 12px */
+  --spacing-lg: 16px;      /* 16px */
+  --spacing-xl: 24px;    /* 24px */
+  --spacing-2xl: 32px;     /* 32px */
+  --spacing-3xl: 48px;     /* 48px */
+
+  /* Component-specific */
+  --button-padding-y: var(--spacing-sm);
+  --button-padding-x: var(--spacing-lg);
+  --input-padding-y: var(--spacing-sm);
+  --input-padding-x: var(--spacing-md);
+  --card-padding: var(--spacing-xl);
+  --card-gap: var(--spacing-lg);
+  --table-cell-padding-y: var(--spacing-md);
+  --table-cell-padding-x: var(--spacing-lg);
+  --page-margin: var(--spacing-2xl);
+  --grid-gap: var(--spacing-lg);
+  --section-gap: var(--spacing-xl);
+
+}

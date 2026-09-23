@@ -1,0 +1,27 @@
+.NewCryptoTenant{
+    overflow: visible;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--btn-3);
+    >div{
+        font-weight: 600;
+        overflow: visible;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+        >p{
+            overflow: hidden;
+            text-overflow:clip;
+        }
+        >div{
+            overflow: visible;
+        }
+    }
+    >h2{
+        color: var(--input-3);
+
+    }
+
+}

@@ -1,0 +1,230 @@
+@use '../Mixins.scss';
+body{
+    background-color: var(--bg-1);
+    *{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    }
+}
+.Loader{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+
+    >svg{
+        height: 24px;
+        width: 24px;
+        animation: 
+        rotate360 5s linear infinite,
+        colorShift 3s ease-in-out infinite;
+    }
+    >div{
+        font-size: 12px;
+        font-style: italic;
+        animation: 
+        colorShift 3s ease-in-out infinite;
+    }
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    color: var(--btn-1);
+  }
+  20% {
+    color: var(--btn-4);
+  }
+  40% {
+    color: var(--btn-2);
+  }
+  60% {
+    color: var(--btn-4);
+  }
+  80% {
+    color: var(--btn-3);;
+  }
+  100% {
+    color: var(--btn-4);;
+  }
+}
+#ContentManager{
+  min-height: 100vh;
+  @include Mixins.custom-scroll();
+}
+#NewCustomer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+        overflow: visible;
+  >button{
+    width: 100%;
+  }
+  .FPInput{
+    width: 100%;
+  }
+
+}
+
+.Messaging{
+  min-height: 24px;
+  display: block;
+  text-overflow: ellipsis;
+  text-indent: 10px;
+  text-align: center;
+  &.red{
+    color:red;
+  }
+  &.green{
+    color:green;
+  }
+}
+#DirectBooking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+    overflow: visible;
+}
+#QueryOrderSelect{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    >span{
+      display: block;
+      width: calc(100% - 24px);
+      text-align: center;
+      padding: 10px;
+      font-style: italic;
+      color: #6f726f;
+    }
+    >.OrderCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-4);
+    color: var(--btn-3);
+    border-top: 4px solid;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    min-width: 240px;
+    min-height: 60px;
+    >div{
+      display: flex;
+      gap: 8px;
+      >div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+      }
+    }
+    .GrandTotal{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 2px dotted var(--border-a);
+    }
+}
+.NoOrdersFound{
+  color: var(--failure-1);
+    margin: 10px;
+    text-align: center;
+}
+}
+
+
+.MultiTimes{
+    width: auto;
+    min-width: 230px;
+    max-width: 245px;
+    display: flex;
+    height: auto;
+    max-height: 35vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    background-color: var(--bg-4);
+    padding: 4px;
+    border-radius: 10px;
+    >div{
+    gap: 2px;
+    width: 40px;
+    height: 36px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color: var(--btn-3);
+    border-radius: 4px;
+    font-size: 10px;
+    background-color: var(--grid-bg-2);
+    cursor: pointer;
+      &:nth-of-type(odd){
+      background-color:var(--grid-bg-1);
+      }
+      &:hover{
+          background-color:var(--grid-bg-3);
+      }
+      &.selected{
+      background-color: var(--btn-3);
+      color: var(--nav-3);
+      }
+    }
+}
+
+.MultiTransact{
+    height: 40px;
+    padding: 2px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 11;
+    bottom: 0px;
+    width: calc(100% - 4px);
+    >div{
+    display: flex;
+    align-content: center;
+    align-items: center;
+      >svg{
+        width: 28px;
+        height: 28px;
+        background-color: var(--btn-3);
+        color: var(--btn-4);
+        padding: 8px;
+        border-radius: 20px;
+        z-index: 10;
+
+      }
+  }
+}
